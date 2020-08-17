@@ -4,6 +4,14 @@
 #define PI 3.1415926535897932384626
 
 // using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::map;
+using std::multimap;
+using std::multiset;
+using std::set;
+using std::string;
 
 template <typename T>
 void readarray(T *arr, size_t l)
@@ -18,7 +26,7 @@ void readarray(T *arr, size_t l)
 template <typename T>
 void printarray(T *arr, size_t l, std::string sep = " ")
 {
-    int32_t i;
+    size_t i;
     fo(i, l)
     {
         if (i == l - 1)
