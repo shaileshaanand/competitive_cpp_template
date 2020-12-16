@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 
 #define fo(i, n) for (i = 0; i < n; i++)
+#define loop(i, a, b) for (i = a; i < b; i++)
 #define PI 3.1415926535897932384626
+#define all(v) v.begin(), v.end()
 typedef int32_t i32;
 typedef int64_t i64;
 
@@ -18,7 +20,7 @@ using std::set;
 using std::string;
 using std::vector;
 
-i32 randint(i32 l, i32 u)
+i64 randint(i64 l, i64 u)
 {
     return l + (rand() % u);
 }
@@ -26,7 +28,7 @@ i32 randint(i32 l, i32 u)
 template <typename T>
 void readarray(T *arr, size_t l)
 {
-    i32 i;
+    i64 i;
     fo(i, l)
     {
         std::cin >> arr[i];
@@ -46,14 +48,14 @@ vector<T> readvector(size_t l)
     return vec;
 }
 template <typename T>
-void readmatrix(i32 rows, i32 columns, std::vector<std::vector<T>> &matrix)
+void readmatrix(i64 rows, i64 columns, std::vector<std::vector<T>> &matrix)
 {
-    i32 num;
-    i32 i, j;
-    i32 arr[columns];
+    i64 num;
+    i64 i, j;
+    i64 arr[columns];
     fo(i, rows)
     {
-        matrix[i] = std::vector<i32>(columns);
+        matrix[i] = std::vector<i64>(columns);
         fo(j, columns)
         {
             cin >> num;
@@ -63,39 +65,41 @@ void readmatrix(i32 rows, i32 columns, std::vector<std::vector<T>> &matrix)
 }
 
 template <typename T>
-void printarray(T *arr, size_t l, std::string sep = " ")
+string joinarray(T *arr, size_t l, std::string sep = " ")
 {
     size_t i;
+    std::ostringstream out;
     fo(i, l)
     {
         if (i == l - 1)
         {
-            std::cout << arr[i];
+            out << arr[i];
         }
         else
         {
-            std::cout << arr[i] << sep;
+            out << arr[i] << sep;
         }
     }
-    std::cout << std::endl;
+    return out.str();
 }
 
 template <typename T>
-void printvector(std::vector<T> vec, std::string sep = " ")
+string joinvector(std::vector<T> vec, std::string sep = " ")
 {
     size_t i;
+    std::ostringstream out;
     for (i = 0; i < vec.size(); i++)
     {
         if (i == vec.size() - 1)
         {
-            std::cout << vec[i];
+            out << vec[i];
         }
         else
         {
-            std::cout << vec[i] << sep;
+            out << vec[i] << sep;
         }
     }
-    std::cout << std::endl;
+    return out.str();
 }
 template <typename T>
 void display(T x)
@@ -107,18 +111,38 @@ void display(T x, U y)
 {
     cout << x << " " << y << endl;
 }
-std::string solve()
+template <typename T>
+map<T, i64> counter(vector<T> vec)
 {
-    i32 i, j, k, a, b, c;
+    map<T, i64> rmap;
+    for (auto elem : vec)
+    {
+        if (rmap.find(elem) == rmap.end())
+        {
+            rmap[elem] = 1;
+        }
+        else
+        {
+            rmap[elem]++;
+        }
+    }
+    return rmap;
+}
+auto solve()
+{
+    i64 i, j, k, a, b, c;
     return "0";
 }
 
 int main()
 {
-    i32 n_test_cases = 1;
+    std::ios::sync_with_stdio(0);
+    cin.tie(0);
+    i64 n_test_cases = 1;
     // cin >> n_test_cases;
     while (n_test_cases--)
     {
+        display(solve());
     }
     return 0;
 }
